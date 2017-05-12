@@ -62,6 +62,7 @@ Options
 * nav - bool - default true. enable navigation
 * blur - bool - default true. Blur other content when open using css filter
 * minSize - int - default 0. Min window width or height to open lightbox. Below threshold will open image in a new tab.
+* onShow - function(plugin)
 
 Captions
 ------
