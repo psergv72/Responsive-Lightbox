@@ -8,6 +8,7 @@
  * nav - bool - default true. enable navigation
  * blur - bool - default true. Blur other content when open using css filter
  * minSize - int - default 0. Min window width or height to open lightbox. Below threshold will open image in a new tab.
+ * onShow - function(img).
  *
  */
 (function ($) {
@@ -20,7 +21,8 @@
             margin: 50,
             nav: true,
             blur: true,
-            minSize: 0
+            minSize: 0,
+            onShow: function () { }
         };
 
         var plugin = {
@@ -74,6 +76,7 @@
                     plugin.image = $("img", plugin.lightbox).hide();
                     plugin.resizeImage();
                     plugin.setCaption();
+                    opts.onShow(plugin);
                 });
             },
 
